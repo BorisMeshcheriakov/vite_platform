@@ -1,18 +1,18 @@
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
-	TechService,
-	PaymentListener,
+	// TechService,
+	// PaymentListener,
 	Main,
 	Header,
 	Profile,
-	SupportPage,
-	NotFound,
-	Loading,
+	// SupportPage,
+	// NotFound,
+	// Loading,
 	RootModal,
-	Notifications,
-	ProgramPayment,
+	// Notifications,
+	// ProgramPayment,
 } from 'modules';
-import { components } from './dynamicComponents';
+// import { components } from './dynamicComponents';
 import { ProtectedRoute } from 'library/components/common';
 
 import { selectModules, selectModulesLoading } from 'library/redux/common';
@@ -28,7 +28,7 @@ const Routes = () => {
 	const redirectTo = () => {
 		let link = '/';
 		let filteredByVisibility = modules.filter(
-			(module) => module.permissions.indexOf('view_module') !== -1
+			(module:any) => module.permissions.indexOf('view_module') !== -1
 		);
 
 		if (filteredByVisibility.length) {
@@ -50,8 +50,8 @@ const Routes = () => {
 			<RootModal />
 
 			<Switch>
-				{modules.map((module) => {
-					const component = components.find((component) => component.type === module.settings.type);
+				{/* {modules.map((module) => {
+					const component = components.find((component: any) => component.type === module.settings.type);
 					if (component) {
 						const Component = component.component;
 						return (
@@ -63,14 +63,16 @@ const Routes = () => {
 						);
 					}
 					return <Route key={module.code} path={`/${module.code}`} render={() => <NotFound />} />;
-				})}
+				})} */}
 
-				{
-					/**
+
+					{/**
 					 * Если в глобальных настройках для лого указана ссылка перехода
 					 * на сторонний ресурс - отключаем главную страницу и делаем редирект
 					 * на первый доступный для просмотра модуль
-					 */
+			*/}
+				{
+
 					logo_url ? (
 						<Redirect exact from="/" to={redirectTo()} />
 					) : (
@@ -79,12 +81,12 @@ const Routes = () => {
 				}
 
 				<Route path="/personal" render={() => <Profile />} />
-				<Route path="/support" render={() => <SupportPage />} />
-				<Route exact path="/technical-service" render={() => <TechService />} />
-				<Route path="/payment" exact component={PaymentListener} />
-				<Route exact path="/program-payment" component={ProgramPayment} />
-				<Route path="/notifications" exact render={() => <Notifications />} />
-				<Route path="*" render={() => (modulesLoading ? <Loading /> : <NotFound />)} />
+				{/* <Route path="/support" render={() => <SupportPage />} /> */}
+				{/* <Route exact path="/technical-service" render={() => <TechService />} /> */}
+				{/* <Route path="/payment" exact component={PaymentListener} /> */}
+				{/* <Route exact path="/program-payment" component={ProgramPayment} /> */}
+				{/* <Route path="/notifications" exact render={() => <Notifications />} /> */}
+				{/* <Route path="*" render={() => (modulesLoading ? <Loading /> : <NotFound />)} /> */}
 			</Switch>
 		</>
 	);
