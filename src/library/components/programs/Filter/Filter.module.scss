@@ -1,0 +1,47 @@
+@import 'resources/branding/colors';
+
+.filter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 34px;
+	width: 34px;
+	background-color: $bgrey;
+	border-radius: 20px;
+
+	&.badgeNumber {
+		width: 63px;
+	}
+
+	&.open {
+		background-color: $blue;
+		.badge {
+			color: #fff;
+		}
+
+		path {
+			fill: #fff;
+		}
+	}
+
+	.badge {
+		color: $dark_grey;
+		margin: 2px 0 0 9px;
+		font-size: 18px;
+		line-height: 16px;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.filter:hover {
+		background-color: $blue;
+
+		.badge {
+			color: #fff;
+		}
+
+		path {
+			fill: #fff;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.cart {
+	width: 21px;
+	height: 19px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.icon {
+	display: flex;
+}
+
+.productsInCartCount {
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	right: -14px;
+	background-color: #f62434;
+	color: #fff;
+	border-radius: 50%;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

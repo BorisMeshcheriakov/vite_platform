@@ -1,0 +1,44 @@
+.notice {
+  &__list {
+    &__item {
+      list-style-type: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      // &_active{
+      //   background-color: rgba(246,246,246,0.69);
+      // }
+      &:hover, &_active {
+        background-color: rgba(246,246,246,0.69);
+      }
+    }
+  }
+
+  &__title {
+    font-family: Text-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #161718;
+    margin: 0;
+
+    & span {
+      font-weight: 600;
+      font-family: Text-Semibold;
+    }
+  }
+
+  &__time {
+    font-family: Text-Regular;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8792a3;
+    margin: 6px 0 0 0;
+  }
+}

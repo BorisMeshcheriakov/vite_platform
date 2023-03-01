@@ -1,0 +1,36 @@
+@import 'resources/branding/colors';
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 17px;
+	cursor: pointer;
+
+	&.publish {
+		color: $dark_grey;
+	}
+
+	&.moderation {
+		color: $orange !important;
+	}
+
+	&.ban {
+		color: red;
+	}
+
+	&.close {
+		color: $dark_grey;
+	}
+}
+
+.icon {
+	width: 18px;
+	height: 16px;
+
+	&__wrapper {
+		width: 34px;
+		display: flex;
+		justify-content: center;
+	}
+}
